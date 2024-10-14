@@ -12,8 +12,8 @@ import java.util.Set;
 
 public class DataStorage {
 
-    private Set<Team> teams = new HashSet<>();
-    private Map<LocalDate, Match> matches = new HashMap<>();
+    private final Set<Team> teams = new HashSet<>();
+    private final Map<LocalDate, Match> matches = new HashMap<>();
 
     public void saveTeams(Team team) {
         teams.add(team);

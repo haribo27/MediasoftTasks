@@ -10,6 +10,9 @@ public class Goal {
     private boolean ownGoal;
     private boolean penalty;
 
+    public Team getTeam() {
+        return team;
+    }
 
     public void setTeam(Team team) {
         this.team = team;
@@ -21,6 +24,10 @@ public class Goal {
 
     public void setScorer(Player scorer) {
         this.scorer = scorer;
+    }
+
+    public int getMinute() {
+        return minute;
     }
 
     public void setMinute(int minute) {

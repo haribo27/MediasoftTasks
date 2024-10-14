@@ -1,6 +1,8 @@
 package ru.practicum.mediasoft.goalstatistics.model;
 
-public class TeamDto {
+import java.util.Comparator;
+
+public class TeamDto implements Comparator<TeamDto> {
 
     private String teamName;
     private int goals_scored;
@@ -38,5 +40,13 @@ public class TeamDto {
                 ", goals_missed=" + goals_missed +
                 ", player=" + top_scorer +
                 '}';
+    }
+
+    @Override
+    public int compare(TeamDto o1, TeamDto o2) {
+        if (o1.getGoals_scored() == o2.getGoals_scored()) {
+            return o1.getTeamName().compareTo(o2.getTeamName());
+        }
+        return o2.getGoals_scored() - o1.getGoals_scored();
     }
 }

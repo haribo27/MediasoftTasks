@@ -17,14 +17,14 @@ public class CollectionSearchAndSort {
                 .filter(human -> params.get("name") == null ||
                         human.getName().toLowerCase()
                                 .contains(params.get("name").toString().toLowerCase()))
-                .filter(human -> params.get("birthday") == null
-                        || human.getBirthday().equals(params.get("birthday")))
-                .filter(human -> params.get("gender") == null
-                        || human.getGender().equalsIgnoreCase(params.get("gender").toString()))
-                .filter(human -> params.get("ageMore") == null
-                        || human.getAge() > Integer.parseInt((String) params.get("ageMore")))
-                .filter(human -> params.get("ageLess") == null
-                        || human.getAge() < Integer.parseInt((String) params.get("ageLess")))
+                .filter(human -> params.get("birthday") == null ||
+                        human.getBirthday().equals(params.get("birthday")))
+                .filter(human -> params.get("gender") == null ||
+                        human.getGender().equalsIgnoreCase(params.get("gender").toString()))
+                .filter(human -> params.get("ageMore") == null ||
+                        human.getAge() > Integer.parseInt((String) params.get("ageMore")))
+                .filter(human -> params.get("ageLess") == null ||
+                        human.getAge() < Integer.parseInt((String) params.get("ageLess")))
                 .sorted(getComparator(sortBy))
                 .toList();
     }

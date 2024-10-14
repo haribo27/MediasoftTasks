@@ -28,9 +28,7 @@ public class DepositCalculator {
     }
 
     public static double calculate(double deposit, int period, double interestRate) {
-        for (int i = 0; i < period; i++) {
-            deposit = deposit * (1 + (interestRate / 100) / 12);
-        }
-        return deposit;
+        double monthlyRate = (interestRate / 100) / 12; // Месячная процентная ставка
+        return deposit * Math.pow(1 + monthlyRate, period);
     }
 }

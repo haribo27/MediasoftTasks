@@ -6,18 +6,18 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import ru.practicum.mediasoft.goalstatistics.model.TeamDto;
 import ru.practicum.mediasoft.goalstatistics.util.ClassManager;
 
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.List;
 
 public class OutputResultService {
 
     private final TeamService teamService = ClassManager.getTeamService();
 
-    public Set<TeamDto> getTeamDto() {
+    public List<TeamDto> getTeamDto() {
         return teamService.getAllTeams().stream()
                 .map(team -> new TeamDto(team.getName(), teamService.getMvpPlayer(team),
                         team.getMissedGoals(), teamService.getTeamGoals(team)))
-                .collect(Collectors.toSet());
+                .sorted((team1, team2) -> team1.compare(team1, team2))
+                .toList();
     }
 
     public String getTeamsAsJson() {
