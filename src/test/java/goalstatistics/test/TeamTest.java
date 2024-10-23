@@ -8,7 +8,6 @@ import ru.practicum.mediasoft.goalstatistics.model.Goal;
 import ru.practicum.mediasoft.goalstatistics.model.Player;
 import ru.practicum.mediasoft.goalstatistics.model.Team;
 import ru.practicum.mediasoft.goalstatistics.service.TeamService;
-import ru.practicum.mediasoft.goalstatistics.storage.DataStorage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +36,7 @@ public class TeamTest {
         teamService.createTeam("Team1");
         teamService.createTeam("Team1");
         Assert.assertEquals(teamService.findTeamByName("Team1").getName(), "Team1");
-        Assert.assertEquals(teamService.getAllTeams().size(),1);
+        Assert.assertEquals(teamService.getAllTeams().size(), 1);
     }
 
     @Test
@@ -84,7 +83,7 @@ public class TeamTest {
         scorers.put(player, player1Goals);
         scorers.put(player1, player2Goals);
         team.setScorers(scorers);
-        Assert.assertEquals(teamService.getMvpPlayer(team).getName(),"One");
+        Assert.assertEquals(teamService.getMvpPlayer(team).getName(), "One");
     }
 
     @Test
@@ -134,7 +133,7 @@ public class TeamTest {
         scorers.put(player, player1Goals);
         scorers.put(player1, player2Goals);
         team.setScorers(scorers);
-        Assert.assertEquals(teamService.getMvpPlayer(team).getName(),"Two");
+        Assert.assertEquals(teamService.getMvpPlayer(team).getName(), "Two");
     }
 
     @Test
@@ -184,7 +183,7 @@ public class TeamTest {
         scorers.put(player, player1Goals);
         scorers.put(player1, player2Goals);
         team.setScorers(scorers);
-        Assert.assertEquals(teamService.getTeamGoals(team),4);
+        Assert.assertEquals(teamService.getTeamGoals(team), 4);
     }
 
 }

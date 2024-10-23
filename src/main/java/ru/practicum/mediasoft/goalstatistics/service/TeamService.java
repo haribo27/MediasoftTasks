@@ -44,7 +44,7 @@ public class TeamService {
                     }
                 })
                 .map(Map.Entry::getKey)
-                .map(player -> new PlayerDto(player.getName(), getPlayerGoals(team, player)))
+                .map(player -> new PlayerDto(player.name(), getPlayerGoals(team, player)))
                 .orElse(null);
     }
 

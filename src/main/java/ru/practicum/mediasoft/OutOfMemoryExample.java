@@ -8,9 +8,9 @@ import java.util.concurrent.Executors;
 public class OutOfMemoryExample {
 
     public static void main(String[] args) {
-        exampleOne();
+     //   exampleOne();
         exampleTwo();
-        exampleThree();
+     //   exampleThree();
     }
 
     public static void exampleOne() {
@@ -21,7 +21,7 @@ public class OutOfMemoryExample {
     }
 
     public static void exampleTwo() {
-        ExecutorService executor = Executors.newFixedThreadPool(10);
+        ExecutorService executor = Executors.newFixedThreadPool(10000);
         try {
             while (true) {
                 executor.submit(() -> {

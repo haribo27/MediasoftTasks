@@ -69,7 +69,7 @@ public class MatchTest {
                 .get()
                 .getGoals()
                 .getFirst()
-                .getScorer().getName(), "José Piendibene");
+                .getScorer().name(), "José Piendibene");
         Assert.assertEquals(storage.getMatch(LocalDate.parse("1916-07-02"))
                 .get()
                 .getGoals().size(), 1);

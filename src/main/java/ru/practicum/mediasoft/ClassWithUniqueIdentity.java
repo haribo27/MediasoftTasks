@@ -22,5 +22,8 @@ public class ClassWithUniqueIdentity {
         System.out.println(classWithUniqueIdentity.getUniqueId());
         System.out.println(classWithUniqueIdentity1.getUniqueId());
         System.out.println(classWithUniqueIdentity2.getUniqueId());
+
+
+        System.out.println(ClassWithUniqueIdentity.idCounter);
     }
 }
